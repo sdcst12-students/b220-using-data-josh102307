@@ -106,14 +106,98 @@ for i in range(1):
         atmosphere = atmosphere + size
         print(f"Atmosphere: {atmosphere}")
 
-    population = random.randint(1,100000000)
+    hydrographics = 0
+    if size == -1:
+            hydrographics = 0
+    else:
+        hydrographics = (roll -7) + size
+        print(f"Hydrographics: {hydrographics}")
+        
+    population = roll - 2
     print(f"Population: {population}")
 
-    govLvl = random.randint(1,10)
+    govLvl = (roll - 7) + population
     print(f"Government Level: {govLvl}")
 
-    lawLvl = random.randint(1,10)
+    lawLvl = (roll -7) + govLvl
     print(f"Law Level: {lawLvl}")
 
-    techLvl = random.randint(1,10)
+    
+    MOD = 0
+
+    if size == 0:
+        MOD = MOD + 2
+    if atmosphere == 0:
+        MOD = MOD + 1
+    if govLvl == 0:
+        MOD = MOD + 1
+    
+    if size == 1:
+        MOD = MOD + 2
+    if atmosphere == 1:
+        MOD = MOD + 1
+    if population == 1:
+        MOD = MOD + 1
+
+    if size == 2:
+        MOD = MOD + 1
+    if atmosphere == 2:
+        MOD = MOD + 1
+    if population == 2:
+        MOD = MOD + 1
+
+    if size == 3:
+        MOD = MOD + 1
+    if atmosphere == 3:
+        MOD = MOD + 1
+    if population == 3:
+        MOD = MOD + 1
+
+    if size == 4:
+        MOD = MOD + 1
+    if population == 4:
+        MOD = MOD + 1
+
+    if population == 5:
+        MOD = MOD + 1
+    if govLvl == 5:
+        MOD = MOD + 1
+
+    if hydrographics == 9:
+        MOD = MOD + 1
+    if population == 9:
+        MOD = MOD + 2
+
+    if starport == "A":
+        MOD = MOD + 6
+    if atmosphere == 10:
+        MOD = MOD + 1
+    if hydrographics == 10:
+        MOD = MOD + 2
+    if population == 10:
+        MOD = MOD + 4
+
+    if starport == "B":
+        MOD = MOD + 4
+    if atmosphere == 11:
+        MOD = MOD + 1
+
+    if starport == "C":
+        MOD = MOD + 2
+    if atmosphere == 12:
+        MOD = MOD + 1
+    
+    if atmosphere == 13:
+        MOD = MOD + 1
+    if govLvl == 13:
+        MOD = MOD - 2
+
+    if atmosphere == 14:
+        MOD = MOD + 1
+
+    if starport == "X":
+        MOD = MOD - 4
+     
+
+    techLvl = d1 + MOD
     print(f"Tech Level: {techLvl}")
